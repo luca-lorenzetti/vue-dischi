@@ -1,0 +1,84 @@
+/***** CSS RESET *****/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/**********************/
+/* GENERAL */
+body{
+    color: #fff;
+    background-color: #1E2D3B;
+    font-family: 'Lato', sans-serif;
+}
+ul{
+    list-style: none;
+}
+/* UTILITIES */
+
+.flex{
+    display: flex;
+}
+
+#root{
+    width: 100%;
+    flex-direction: column;
+}
+.header{
+    background-color: #2E3A46;
+    width: 100%;
+    height: 70px;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.content{
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.list ul{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.list ul > li{
+    margin: 20px;
+}
+.card{
+    text-align: center;
+    position: relative;
+    background-color: #2E3A46;
+    width: 150px;
+    height: 320px;
+    padding: 15px;
+    flex-direction: column;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.cover{
+    width: 100%;
+}
+
+.card img{
+    overflow: hidden;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.disc_title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.disc_author{
+    color: darkgrey;
+    font-size: 16px;
+}
+.disc_year{
+    color: darkgrey;
+}
