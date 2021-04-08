@@ -15,7 +15,7 @@ let app = new Vue({
         discs: [],
         discsFiltered: [],
         genres: ["All"],
-        filters: []
+        filters: [],
     },
     methods: {
         getListDisc(){
@@ -23,7 +23,12 @@ let app = new Vue({
             axios.get("https://flynn.boolean.careers/exercises/api/array/music")
             .then( (response)=>{
                 this.discs = response.data.response;
+                
+                this.discs.sort( (disc, disc2)=>{
+                    return disc.year - disc2.year;
+                }); 
                 this.discsFiltered = this.discs;
+
                  this.getGenres();
             });        
         },
@@ -34,17 +39,20 @@ let app = new Vue({
                     this.genres.push(element.genre);
                 }
             });
+    
         },
         getFilters(filters){
             this.discsFiltered = this.discs.filter(element => {
                 return filters.includes(element.genre) || filters.includes("All"); 
             });
-        }
+        },
+  
         
     },
     created(){
         this.getListDisc();
-    }
+    },
+   
 });
 
 
