@@ -16,13 +16,24 @@
 <body>
 
     <div id="root">
+        <!-- Header -->
         <div class="header flex">
             <img src="img/logo.png" alt="logo">
          </div>
+        <!-- /Header -->
+
+
+         <!-- Content -->
         <div class="content flex">
-            <div class="list" v-show="discs.length > 0">
+
+            <div class="filter">
+                <select name="genres"multiple @change="getFilters(filters)" v-model="filters"> 
+                    <option v-for="genre in genres">{{genre}}</option>
+                  </select>
+            </div>
+            <div class="list" v-show="discsFiltered.length > 0">
                 <ul class="flex">
-                    <li v-for="song in discs">
+                    <li v-for="song in discsFiltered">
                         <div class="card flex">
                             <div class="cover">
                                 <img :src="song.poster">
@@ -35,6 +46,8 @@
                 </ul>
             </div>
         </div>
+         <!-- /Content -->
+
     </div>
        
     <!-- development version, includes helpful console warnings -->
